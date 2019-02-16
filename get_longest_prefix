@@ -1,0 +1,20 @@
+class Solution:
+    def longestCommonPrefix(self, strs):
+        arrLeng = len(strs) - 1
+        firword = 0
+        firchar = 0
+        retStr = ""
+        if strs[firword][firchar] == strs[arrLeng][firchar]:
+            arrLeng =-1
+            retStr = strs[firword][firchar]
+            for arrLeng > 1:
+                if strs[firword][firchar] == strs[arrLeng][firchar]:
+                    arrLeng =-1
+                    continue
+                else:
+                    if firchar == 0:
+                        retStr = ""
+                    break
+        return retStr
+
+longestCommonPrefix(["flower","flow","flight"]);
