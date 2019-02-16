@@ -1,0 +1,21 @@
+//This code derives the column name by given integer
+
+def convertToTitle(n):
+    if n == 0:
+        return None
+    alphabets = ['Z','A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N','O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    if n in range(len(alphabets)):
+        return alphabets[n]
+    else:
+        first_char = n
+        col = ''
+        while first_char > 0:
+            if first_char%26:
+                col += alphabets[last_char]
+                first_char = int(first_char/26)
+            else:
+                col = col + 'Z'
+                first_char = int(first_char/26-1)
+        return col[::-1]
+
+print(convertToTitle(702))
