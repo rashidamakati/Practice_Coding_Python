@@ -1,0 +1,19 @@
+//Leetcode problem to get the stockmarket max profit
+
+def maxProfit(prices):
+    if len(prices) == 0:
+        return 0
+    if len(prices) == 1:
+        return prices
+    minval = min(prices)
+    if prices.index(minval) < len(prices)-1:
+        return (max(prices[prices.index(minval):]) - minval)
+    else:
+        return 0
+
+
+
+    return 0
+
+
+print (maxProfit([2,4,1]))
