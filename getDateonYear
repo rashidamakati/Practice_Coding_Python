@@ -1,0 +1,11 @@
+//Finding the date of second Tuesday of October for a given year
+
+def getYear(year):
+    get_num = 29 + year + (year//4) - (year//100) + (year//400)
+    week_num = get_num % 7
+    if week_num > 3:
+        return (18 - week_num)
+    else:
+        return (11 - week_num)
+
+print(getYear(2019))
