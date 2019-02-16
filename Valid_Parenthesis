@@ -1,0 +1,27 @@
+//Program to check if the input has Valid Parenthesis or not
+
+def isValid(s1):
+    """
+    :type s: str
+    :rtype: bool
+    """
+    if len(s1)%2 != 0:
+    	return False
+
+    opening = set('([{')
+    matches = set([ ('{','}'), ('[',']'), ('(',')') ])
+
+    stack = []
+    for perm in s1:
+        if perm in opening:
+            stack.append(perm)
+        else:
+            if len(stack) == 0 :
+                return False
+            last_val = stack.pop()
+            if (last_val,perm) not in matches:
+                return False
+    return len(stack) == 0
+
+
+print (isValid('[{}]'))
