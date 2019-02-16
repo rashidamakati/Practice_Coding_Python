@@ -1,0 +1,45 @@
+// Code to convert roman numbers to integers.
+
+def romanToInt(s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        num = []
+        for integers in s:
+            if integers == "I":
+                num.append(1)
+            elif integers == "V":
+                num.append(5)
+            elif integers == "X":
+                num.append(10)
+            elif integers == "L":
+                num.append(50)
+            elif integers == "C":
+                num.append(100)
+            elif integers == "D":
+                num.append(500)
+            elif integers == "M":
+                num.append(1000)
+        xx = len(num)-1
+        gen = 0
+        newvar = 0
+
+        while gen < len(num):
+            if gen < xx:
+                if num[gen] >= num[gen+1]:
+                    newvar = newvar+num[gen]
+                    gen = gen+1
+
+                else:
+                    newvar = newvar+(num[gen+1]-num[gen])
+                    gen = gen+2
+
+            else:
+                newvar = newvar+num[gen]
+                break
+
+        print(newvar)
+
+
+romanToInt("MCMXCIV");
