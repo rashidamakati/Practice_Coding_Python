@@ -1,0 +1,25 @@
+//Code to check if the id_pair have common ancestors
+
+import sys
+import collections
+
+id_pr = []
+def shareAncestor(id_pair, parent_child_pairs):
+  # IMPLEMENTATION GOES HERE
+  
+  find_par(id_pair[0], parent_child_pairs)
+  find_par(id_pair[1], parent_child_pairs)
+  
+  text = [item for item, count in collections.Counter(id_pr).items() if count > 1]
+  if text:
+    return True
+  else:
+    return False
+       
+def find_par(id, parent_child_pairs):
+  for listing in parent_child_pairs:
+    if listing[1] == id:
+      id_pr.append(listing[0])
+      find_par(listing[0], parent_child_pairs)
+  
+  return
