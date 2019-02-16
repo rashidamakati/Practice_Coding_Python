@@ -1,0 +1,12 @@
+//This code determines if the characters in the string are unique or not
+
+def isUnique(string):
+    for char in string:
+        last = len(string)-1
+        while last > string.find(char):
+            if char == string[last]:
+                return False
+            last -= 1
+    return True
+
+print (isUnique("hello"))
