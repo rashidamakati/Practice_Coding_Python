@@ -1,0 +1,28 @@
+def LongPress(name, typed):
+    ptr1 = 0
+    ptr2 = 0
+    prevChar = ""
+
+    while(ptr1 < len(name) and ptr2 < len(typed)):
+        if(name[ptr1] == typed[ptr2]):
+            ptr1 += 1
+            ptr2 += 1
+        else:
+            if(typed[ptr2] == name[ptr1-1]):
+                ptr2 += 1
+                continue
+            else:
+                return False
+
+        if(ptr1 < len(name)):
+            return False
+        while(ptr2 < len(typed)):
+            if(typed[ptr2] == name[-1]):
+                ptr2 += 1
+            else:
+                return False
+
+        return True
+
+
+print(LongPress("kikcxmvzi","kiikcxxmmvvzz"))
