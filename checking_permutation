@@ -1,0 +1,11 @@
+//This code is to check if two strings are the permutations of each other
+
+def permute(string1, string2):
+    if len(string1) == len(string2):
+        if sorted(string1) == sorted(string2):
+            return True
+
+    return False
+
+
+print (permute("table", "ablet"))
