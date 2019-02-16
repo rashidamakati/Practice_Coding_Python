@@ -1,0 +1,16 @@
+//Code to make the string compress
+
+def Compression(str1):
+    dict = {}
+    ret_arr = ""
+    for char in str1:
+        if char in dict:
+            dict[char] += 1
+        else:
+            dict[char] = 1
+    for key in dict:
+        ret_arr += key+str(dict[key])
+
+    return ret_arr
+
+print(Compression("addddiiiiww"))
