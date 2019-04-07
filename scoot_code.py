@@ -3,7 +3,7 @@ import json
 from math import sin, cos, sqrt, atan2, radians
 import time
 
-json_data = json.loads(requests.get("https://app.scoot.co/api/v1/scooters.json").text)
+json_data = json.loads(requests.get("mydata.json").text)
 
 latinput = input("Enter Latitude: ")
 longinput = input("Enter Longitude: ")
@@ -47,15 +47,10 @@ while(True):
     time.sleep(5)
 
 
-
-
-
-# # Associate Software Engineer Programming Challenge:
-# #
 # # Build a program that takes a coordinate (latitude and longitude - a location somewhere in San Francisco) as input, and displays a list of vehicles that are within 300 meters of that location. This list should stay up to date and accurate as often as every few seconds.
 # #
 # # You can code in any language that you are most proficient in.
 # #
 # # You can retrieve the list of vehicles from this API
-# # https://app.scoot.co/api/v1/scooters.json
+# # mydata.json
 #
